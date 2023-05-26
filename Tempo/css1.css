@@ -1,0 +1,53 @@
+body {
+    font-family: 'roboto', 'sans-serif';
+}
+* {
+    box-sizing: border-box ;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Showcase */
+
+#showcase {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: x-large;
+    align-items: center;
+    color: white;
+    background: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm218-bb-5_1_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=663c98924a2425eca31985250191e4b7") center center/cover;
+    background-color: rgba( 0,0,0,0.10 );
+    background-blend-mode: color;
+}
+
+
+button{
+    background-color: #356bff;  
+    color: white;
+	border-style: outset;
+	border-color: #99afec;
+	height: 40px;
+	width: 80px;
+	text-shadow: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color: white;
+    color:#356bff
+}
+input{ 
+    background-color: #ffffff;  
+    color: rgb(0, 0, 0);
+	border-style: outset;
+	border-color: #99afec;
+    height: 50px;
+	width: 250px;
+
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css1.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>API - TEMPO</title>
+</head>
+<body>
+    
+        <!--Showcase-->
+    
+        <div id="showcase">
+
+            <br>
+                <main>
+                    <div class="box">
+                            
+                        <div class="textoatencao">
+                            <h2>API DE TEMPO</h2>
+                            <br>
+                        </div>
+                        
+                        <h1> Digite o estado e veja quantos graus esta fazendo!</h1>
+                        <br><br>
+                            <p id="temperatura">Carregando...</p>
+                            <br>
+
+                            <input type="text" id="local" class="busca2" placeholder=" Digite sua cidade ">
+                            <button class="button2" onclick="getWeather()">buscar</button>
+
+                            <a href="tempo.html"> <button class="button2" >Recarregar</button></a>
+                            <a href="..//INDEX/index.html"> <button class="button2" >Voltar</button></a>
+
+
+                    </div>
+
+                </main> 
+        </div>
+            
+</body>
+<script>
+    //Biblioteca axios para realizar uma requisição HTTP a API da OpenWeatherMap para obter a previsão do tempo.
+
+    //esta linha define a fução assincrona, isso significa que a funçaõ pode esperar por uma resposta da api.
+
+    async function getWeather(){
+
+        //Nesta linha estamos fazendo a chamada da API usando a biblioteca Axios.A URL inclui informações de localização(Mogi das Cruzes) e a unidade de medida (Celsius) e a chave da API (API-KEY).
+
+        var cidade = document.getElementById("local").value;
+
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=64ed82577ced7f69cb1687f0ce536131`);
+
+        //Aqui estamos extraindo a temperatura atual (celsius) da resposta da API e armazenando na variavel = tempCelsius
+
+        const tempCelsius = response.data.main.temp
+
+        document.querySelector('#temperatura').innerHTML = `A temperatura atual é de ${tempCelsius}°`;
+    }
+
+    //chamando a função getWather para iniciar a consulta a API.
+    getWeather();
+
+</script>
+
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/41c67a60df.js" crossorigin="anonymous"></script>
+</html>
